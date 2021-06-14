@@ -1,0 +1,252 @@
+//animation //
+@keyframes rotate{
+    0% {
+        transform: rotate(0deg)
+    }
+    25%{
+        transform: rotateY(90deg);
+    }
+    50%{
+        transform: rotateY(0deg)
+    }
+    75%{
+        transform: rotateY(90deg)
+    }
+    100%{
+        transform:rotateY(0deg)
+    }
+}
+
+@keyframes animateTitle {
+    0% {
+    background-position: -600%;
+    }
+    100% {
+    background-position: 600%;
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    } 
+}
+
+@mixin sunEffect{
+    background: linear-gradient(45deg, #fff, #36383a, #fff);
+    background-size: 90%;
+    animation: animateTitle 10s infinite ease-out;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+@mixin fontTitle{
+    text-align: center;
+    font-size: 1.8rem;
+    color: $main_color-brown;
+    text-shadow: 1px 1px 2px #000;
+}
+
+//variables de couleur //
+$main_color-brown: rgb(160, 113, 86);
+$main_color-cream:rgb(224, 190, 157);
+
+//page d'accueil //
+
+.title{
+    background-color:$main_color-brown!important;
+    text-align: center;
+    padding: 0.4rem;
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+}
+
+body{
+    box-sizing: border-box;
+}
+
+h1{
+    @include sunEffect;
+}
+
+.navbar{
+    padding-top: 4rem;
+    background-color: $main_color-cream!important;
+}
+
+.turn{
+    animation: rotate 4s infinite ease-in-out;
+}
+
+.position{
+    justify-content:flex-end!important;
+}
+.navbar-nav{
+    column-gap: 2rem;
+    margin-top: 0.5rem;
+    & .nav-item{
+        font-weight: 700;
+    }
+    & .nav-link{
+        color: rgb(51, 48, 48)!important;
+        font-size: 1.3rem;
+        &:hover{
+            background: $main_color-brown;
+            border-radius: 5px;
+            color:#fff!important;   
+            padding-left:10px;
+        }
+    }
+}
+
+.info,
+.presentation{
+    text-align: center;
+    margin-top: 2rem;
+    color: $main_color-brown;
+    text-shadow: 1px 1px 2px #000;
+    font-size: 1.6rem!important;
+    & p{
+        margin-top: 1rem;
+        font-size: 1.3rem;
+    }
+    & h2,
+    & h3{
+        @include fontTitle;
+    }
+    
+}
+.height{
+    height: 20rem;
+    object-fit: cover;
+}
+
+.product{
+    margin-top: 3rem;
+    font-size: 1.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 3rem;
+    justify-content: center;
+
+}
+
+.runLeft,
+.runRight{
+    text-align: center;
+    width: 8rem;
+    border-radius: 15px;
+    padding:0.7rem;
+    font-weight: bold;
+    box-shadow: 2px 1px 2px #000;
+    transition: all 300ms;
+    cursor: pointer;
+    &:hover{
+        transform: scale(1.2);
+    }
+}
+
+.runLeft{
+    animation: appear 3s 3;
+    background-color: $main_color-brown;
+    color: #fff;
+    text-shadow: 2px 1px 1px #000;
+}
+.runRight{
+    background-color: $main_color-cream;
+    animation: appear 3s 3;
+    animation-delay: 1500ms;
+}
+
+
+// bas de page //
+.footer{
+    background-color: $main_color-brown;
+    padding-bottom: 1rem;
+    & .copyright{
+        width:100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding-top: 1rem;
+        font-size: 1.2rem;
+        color: #fff;
+    }
+    & .director{
+        display: flex;
+        justify-content: center;
+        column-gap: 0.5rem;
+        & img{
+            width:4rem;
+            height: auto;    
+        }
+        & a{
+            color:#fff;
+            text-shadow: 1px 1px 2px #000;
+            text-decoration: none;
+            &:hover{
+                color: #e1ec3c;
+            }
+        }
+    }
+}
+
+// page d acces //
+.map{
+    margin-top: 5rem;
+    text-align: center;
+    & h3{
+        @include fontTitle;
+        margin-bottom: 2rem;
+    }
+}
+
+//page clothing.html
+.insert{
+    margin-top: 15%;
+    margin-bottom: 5rem;
+}
+
+.await{
+    text-align: center;
+    padding: 1rem;
+    margin: 3rem 15%;
+    border: 5mm ridge $main_color-brown;
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+
+@media all and (min-width:750px){
+    main{
+        width:80%;
+        margin:auto;
+    }
+    .height{
+        height: 25rem;
+    }
+}
+
+@media all and (min-width:1200px){
+    main{
+        width:70%;
+        margin:auto;
+    }
+    .height{
+        height: 30rem;
+    }
+}
+
+@media all and (min-width:1500px){
+    main{
+        width:70%;
+        margin:auto;
+    }
+    .height{
+        height: 35rem;
+    }
+}
