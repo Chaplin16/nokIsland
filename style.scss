@@ -166,7 +166,15 @@ h1{
 // bas de page //
 .footer{
     background-color: $main_color-brown;
+    padding-top: 1rem;
     padding-bottom: 1rem;
+    display: flex;
+    column-gap: 1rem;
+    justify-content: center;
+    & .relance{
+        width: 10rem;
+        max-height: 7rem;
+    }
     & .copyright{
         width:100%;
         display: flex;
@@ -175,7 +183,6 @@ h1{
         align-items: center;
         padding-top: 1rem;
         font-size: 1.2rem;
-        color: #fff;
     }
     & .director{
         display: flex;
@@ -183,19 +190,18 @@ h1{
         column-gap: 0.5rem;
         & img{
             width:4rem;
-            height: auto;    
+            max-height: 2.5rem;    
         }
         & a{
-            color:#fff;
+            color: rgb(223, 228, 153);
             text-shadow: 1px 1px 2px #000;
             text-decoration: none;
             &:hover{
-                color: #e1ec3c;
+            color: #f04ed5;
             }
         }
     }
 }
-
 // page d acces //
 .map{
     margin-top: 5rem;
